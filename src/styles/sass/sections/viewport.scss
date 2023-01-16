@@ -1,0 +1,111 @@
+.viewport {
+    margin-top: 8rem;
+    padding: 2rem;
+    height: 60%;
+    width: 100%;
+    &__projectContainer {
+        overflow: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        place-items: center;
+
+        @media screen and (min-width: 50rem) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (min-width: 83.4rem) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @media screen and (min-width: 115rem) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        &--projectCard {
+            width: 100%;
+            max-width: 32.2rem;
+            height: 21rem;
+            position: relative;
+            box-shadow: 0 0 1rem $blue;
+            display: flex;
+            justify-content: end;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 0.5rem;
+            &:hover {
+                cursor: pointer;
+                filter: saturate(3);
+                -webkit-filter: saturate(30px);
+            }
+            @media screen and (min-width: 83.4rem) {
+                width: 38vw;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    180deg,
+                    rgba(239, 239, 239, 0) 0%,
+                    rgba(18, 37, 43, 0.95) 81.77%
+                );
+                z-index: -1;
+            }
+            &--image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+
+                & img {
+                    aspect-ratio: auto;
+                    width: 100%;
+                }
+            }
+            &--title {
+                pointer-events: none;
+                display: flex;
+                width: 90%;
+                justify-content: space-between;
+                align-items: baseline;
+                font-size: 2rem;
+                color: $offWhite;
+                margin-left: 0.6rem;
+                margin-bottom: 0.5rem;
+                text-transform: capitalize;
+                text-shadow: 1px 1px 2px $blue;
+                &-type {
+                    font-size: 1.2rem;
+                    font-weight: $reg;
+                }
+            }
+            &--skills {
+                pointer-events: none;
+                color: $black;
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                width: 100%;
+                align-items: center;
+                gap: 0.5rem;
+                row-gap: 1rem;
+                height: 5.2rem;
+                & span {
+                    background-color: $offWhite;
+                    width: fit-content;
+                    text-align: center;
+                    padding: 0.5rem 1rem;
+                    font-size: 1rem;
+                    font-weight: $bold;
+                    text-transform: uppercase;
+                    border-radius: 0.3rem;
+                    -webkit-border-radius: 0.3rem;
+                    -moz-border-radius: 0.3rem;
+                    -ms-border-radius: 0.3rem;
+                    -o-border-radius: 0.3rem;
+                }
+            }
+        }
+    }
+}

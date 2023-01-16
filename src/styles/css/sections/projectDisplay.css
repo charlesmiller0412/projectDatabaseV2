@@ -1,0 +1,166 @@
+.projectDisplay {
+  background: rgba(18, 37, 43, 0.94);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.projectDisplay__container {
+  background-color: #efefef;
+  position: absolute;
+  height: 70%;
+  max-height: 75rem;
+  width: 85%;
+  max-width: 110rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
+.projectDisplay__container--close {
+  font-size: 2rem;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  background-color: #7eaecd;
+  padding: 1rem 2rem;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  border: 1px solid #a1dcf0;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+.projectDisplay__container--close:hover {
+  cursor: pointer;
+  background-color: #384b52;
+  color: #efefef;
+}
+.projectDisplay__container--image {
+  display: grid;
+  place-items: center;
+}
+.projectDisplay__container--image img {
+  box-shadow: 0 0 5px #7eaecd;
+  width: 100%;
+  max-width: 45rem;
+  height: auto;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+@media screen and (max-width: 700px) {
+  .projectDisplay__container--image img {
+    width: 90%;
+  }
+}
+.projectDisplay__container--title {
+  display: flex;
+  width: 45%;
+  justify-content: space-evenly;
+  align-items: baseline;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 700px) {
+  .projectDisplay__container--title {
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.projectDisplay__container--skills {
+  font-size: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  width: 80%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.projectDisplay__container--skills-skill {
+  background-color: #a1dcf0;
+  padding: 0.5rem 1rem;
+  border: 1px solid #12252b;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+@media screen and (max-width: 700px) {
+  .projectDisplay__container--skills-skill {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+.projectDisplay__container--description {
+  width: 70%;
+  max-width: 60rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+@media screen and (max-width: 700px) {
+  .projectDisplay__container--description {
+    width: 90%;
+  }
+}
+.projectDisplay__container--links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.projectDisplay__container--links-dark {
+  background-color: #384b52;
+}
+.projectDisplay__container--links-light {
+  background-color: #7eaecd;
+}
+.projectDisplay__container--links-dark, .projectDisplay__container--links-light {
+  padding: 1.5rem 4rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #12252b;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+.projectDisplay__container--links-dark:hover, .projectDisplay__container--links-light:hover {
+  cursor: pointer;
+  background-color: #12252b;
+}

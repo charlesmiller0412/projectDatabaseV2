@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 6rem 5rem;
+    font-family: $ligurino;
+    background-color: $offWhite;
+
+    @media screen and (max-width: 83.6rem) {
+        padding: 3rem;
+    }
+
+    @media screen and (max-width: 37.5rem) {
+        padding: 1.5rem;
+    }
+}
+
+.projectDatabase {
+    width: 100%;
+    height: 100%;
+}
