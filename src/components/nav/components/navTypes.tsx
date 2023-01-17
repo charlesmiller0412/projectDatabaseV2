@@ -21,6 +21,7 @@ export const NavTypes = (props: any) => {
                     <li
                         id={type.id}
                         onClick={handleClick}
+                        key={type.name}
                         className={
                             props.currentType === type.id
                                 ? "nav__types--list-active nav__types--list-mobile-active"

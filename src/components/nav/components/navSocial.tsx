@@ -43,7 +43,12 @@ export const NavSocial = (props: any) => {
     return (
         <div className="nav__links--social">
             {links.map((link: any) => (
-                <a href={link.link} target="__blank" aria-label={link.label}>
+                <a
+                    href={link.link}
+                    target="__blank"
+                    aria-label={link.label}
+                    key={link.name}
+                >
                     <FontAwesomeIcon
                         icon={link.icon}
                         size={props.matches ? "xl" : "2xl"}
