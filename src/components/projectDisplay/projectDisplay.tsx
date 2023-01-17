@@ -44,7 +44,9 @@ export const ProjectDisplay = (props: any) => {
                         target="__blank"
                         className="projectDisplay__container--links-dark"
                     >
-                        source code
+                        {props.activeProject.type === "design"
+                            ? "my process"
+                            : "source code"}
                     </a>
                     <a
                         href={props.activeProject.siteurl}
