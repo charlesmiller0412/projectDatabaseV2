@@ -5,7 +5,7 @@ export const NavTypes = (props: any) => {
     };
 
     const types = [
-        { name: "favorite", id: "favorites" },
+        { name: "favorites", id: "favorites" },
         { name: "web", id: "web" },
         { name: "apps", id: "app" },
         { name: "portfolios", id: "portfolio" },
