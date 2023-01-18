@@ -7,7 +7,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 export const NavMobile = (props: any) => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
-        <div className="nav__mobile">
+        <nav className="nav__mobile">
             <div
                 className="nav__mobile--icons"
                 onClick={() => setMenuOpen(!menuOpen)}
@@ -23,6 +23,6 @@ export const NavMobile = (props: any) => {
                 currentType={props.currentType}
                 setCurrentType={props.setCurrentType}
             />
-        </div>
+        </nav>
     );
 };

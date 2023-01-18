@@ -50,7 +50,7 @@ export default function Viewport(props: any) {
               </div>
           ));
     return (
-        <div className="viewport">
+        <section className="viewport">
             {props.currentType === "about" ? <About /> : msg}
             {props.showProject ? (
                 <ProjectDisplay
@@ -61,6 +61,6 @@ export default function Viewport(props: any) {
             ) : (
                 ""
             )}
-        </div>
+        </section>
     );
 }

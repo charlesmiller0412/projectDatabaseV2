@@ -8,7 +8,7 @@ export default function Nav(props: any) {
     const matches = useMediaQuery("(max-width: 833px)");
 
     return (
-        <div className="nav">
+        <nav className="nav">
             <NavLogo matches={matches} />
             <NavTypes
                 className={"nav__types--list"}
@@ -20,6 +20,6 @@ export default function Nav(props: any) {
                 currentType={props.currentType}
                 setCurrentType={props.setCurrentType}
             />
-        </div>
+        </nav>
     );
 }
