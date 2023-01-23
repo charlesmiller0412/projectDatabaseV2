@@ -1,7 +1,18 @@
+import { useState } from "react";
+import { NavSearch } from "./navSearch";
+import { useMediaQuery } from "usehooks-ts";
+
 export const NavTypes = (props: any) => {
+    const matches = useMediaQuery("(max-width: 833px)");
+    const [showSearch, setShowSearch] = useState(false);
+
     const handleClick = (e: any) => {
         props.setCurrentType(e.target.id);
-        props.setMenuOpen(false);
+        props.setSearchTerm("");
+        setShowSearch(false);
+        if (matches) {
+            props.setMenuOpen(false);
+        }
     };
 
     const types = [
@@ -31,6 +42,14 @@ export const NavTypes = (props: any) => {
                         {type.name}
                     </li>
                 ))}
+                <NavSearch
+                    setSearchTerm={props.setSearchTerm}
+                    searchTerm={props.searchTerm}
+                    searchProjects={props.searchProjects}
+                    projects={props.projects}
+                    showSearch={showSearch}
+                    setShowSearch={setShowSearch}
+                />
             </ul>
         </div>
     );

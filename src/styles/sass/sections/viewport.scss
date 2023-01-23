@@ -9,7 +9,6 @@
         grid-template-columns: 1fr;
         gap: 3rem;
         place-items: center;
-
         @media screen and (min-width: 50rem) {
             grid-template-columns: 1fr 1fr;
         }

@@ -10,6 +10,8 @@ function ProjectDatabase() {
     const [currentProject, setCurrentProject] = useState(null);
     const [showProject, setShowProject] = useState(false);
     const [activeProject, setActiveProject] = useState(null);
+    const [searchTerm, setSearchTerm] = useState<any>("");
+    const [searchResults, setSearchResults] = useState<any>("");
 
     const fetchProjects = async () => {
         try {
@@ -40,11 +42,33 @@ function ProjectDatabase() {
         fetchProjects();
     }, []);
 
+    // search for input
+    function searchProjects(searchTerm: any) {
+        setCurrentType("all");
+        setSearchTerm(searchTerm);
+        if (searchTerm !== "") {
+            const searchResults = projects.filter((project: any) =>
+                Object.values(project)
+                    .join("")
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
+            );
+            setSearchResults(searchResults);
+        }
+    }
+
     return (
         <div className="projectDatabase">
-            <Nav setCurrentType={setCurrentType} currentType={currentType} />
+            <Nav
+                setCurrentType={setCurrentType}
+                currentType={currentType}
+                setSearchTerm={setSearchTerm}
+                searchTerm={searchTerm}
+                searchProjects={searchProjects}
+                projects={projects}
+            />
             <Viewport
-                projects={filteredProjects}
+                projects={searchTerm !== "" ? searchResults : filteredProjects}
                 error={error}
                 setError={setError}
                 loading={loading}

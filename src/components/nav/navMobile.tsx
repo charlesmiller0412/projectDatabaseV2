@@ -22,6 +22,10 @@ export const NavMobile = (props: any) => {
                 setMenuOpen={setMenuOpen}
                 currentType={props.currentType}
                 setCurrentType={props.setCurrentType}
+                setSearchTerm={props.setSearchTerm}
+                searchTerm={props.searchTerm}
+                searchProjects={props.searchProjects}
+                projects={props.projects}
             />
         </nav>
     );

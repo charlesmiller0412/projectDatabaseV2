@@ -40,13 +40,17 @@ export default function Viewport(props: any) {
         ? (msg = <p>Error...</p>)
         : (msg = (
               <div className="viewport__projectContainer">
-                  {projects.map((project: any) => (
-                      <ProjectCard
-                          project={project}
-                          key={uuidv4()}
-                          onClick={handleClick}
-                      />
-                  ))}
+                  {projects.length === 0 ? (
+                      <h1>No Results Found...</h1>
+                  ) : (
+                      projects.map((project: any) => (
+                          <ProjectCard
+                              project={project}
+                              key={uuidv4()}
+                              onClick={handleClick}
+                          />
+                      ))
+                  )}
               </div>
           ));
     return (

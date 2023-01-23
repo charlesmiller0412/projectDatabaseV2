@@ -14,11 +14,19 @@ export default function Nav(props: any) {
                 className={"nav__types--list"}
                 currentType={props.currentType}
                 setCurrentType={props.setCurrentType}
+                setSearchTerm={props.setSearchTerm}
+                searchTerm={props.searchTerm}
+                searchProjects={props.searchProjects}
+                projects={props.projects}
             />
             <NavLinks matches={matches} className={"nav__links"} />
             <NavMobile
                 currentType={props.currentType}
                 setCurrentType={props.setCurrentType}
+                setSearchTerm={props.setSearchTerm}
+                searchTerm={props.searchTerm}
+                searchProjects={props.searchProjects}
+                projects={props.projects}
             />
         </nav>
     );
