@@ -8,7 +8,7 @@ export const NavMobile = (props: any) => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
         <nav className="nav__mobile">
-            <div
+            <button
                 className="nav__mobile--icons"
                 onClick={() => setMenuOpen(!menuOpen)}
             >
@@ -16,7 +16,7 @@ export const NavMobile = (props: any) => {
                     icon={menuOpen ? faXmark : faBars}
                     className={menuOpen ? "nav__mobile--icons-open" : ""}
                 />
-            </div>
+            </button>
             <MobileMenu
                 menuOpen={menuOpen}
                 setMenuOpen={setMenuOpen}

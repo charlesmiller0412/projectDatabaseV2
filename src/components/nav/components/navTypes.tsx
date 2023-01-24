@@ -5,7 +5,6 @@ import { useMediaQuery } from "usehooks-ts";
 export const NavTypes = (props: any) => {
     const matches = useMediaQuery("(max-width: 833px)");
     const [showSearch, setShowSearch] = useState(false);
-
     const handleClick = (e: any) => {
         props.setCurrentType(e.target.id);
         props.setSearchTerm("");
@@ -29,17 +28,19 @@ export const NavTypes = (props: any) => {
         <div className="nav__types">
             <ul className={props.className}>
                 {types.map((type: any) => (
-                    <li
-                        id={type.id}
-                        onClick={handleClick}
-                        key={type.name}
-                        className={
-                            props.currentType === type.id
-                                ? "nav__types--list-active nav__types--list-mobile-active"
-                                : ""
-                        }
-                    >
-                        {type.name}
+                    <li>
+                        <button
+                            className={
+                                props.currentType === type.id
+                                    ? "nav__types--list-active nav__types--list-mobile-active"
+                                    : ""
+                            }
+                            id={type.id}
+                            onClick={handleClick}
+                            key={type.name}
+                        >
+                            {type.name}
+                        </button>
                     </li>
                 ))}
                 <NavSearch

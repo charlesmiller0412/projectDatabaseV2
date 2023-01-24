@@ -8,19 +8,20 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 5rem;
+    padding: 5rem 3rem;
     background-color: $offWhite;
     z-index: 100;
     &__logo {
         &--desktop {
-            width: 12vw;
+            width: 8vw;
             height: auto;
-            max-width: 14rem;
+            min-width: 9rem;
+            max-width: 12rem;
         }
     }
     &__types {
-        letter-spacing: 0.3rem;
-        font-size: clamp(1rem, 1vw, 1.3rem);
+        padding: 0 1rem;
+
         @media screen and (min-width: 834px) {
             display: flex;
         }
@@ -29,7 +30,6 @@
             gap: 1.5vw;
             align-items: center;
             list-style-type: none;
-            text-transform: uppercase;
             &-active::before {
                 content: "";
                 position: absolute;
@@ -38,6 +38,13 @@
                 bottom: -0.75rem;
                 left: -0.1rem;
                 background-color: $blue;
+            }
+            & button {
+                letter-spacing: 0.3vw;
+                font-size: clamp(1rem, 1vw, 1.3rem);
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
             }
             @media screen and (max-width: 833px) {
                 display: none;
@@ -53,12 +60,21 @@
                 gap: 3rem;
                 margin-left: 3rem;
 
-                & li:hover {
+                & li button:hover {
                     color: $blue;
                     cursor: pointer;
                 }
+
+                & li button {
+                    font-size: clamp(2rem, 1vw, 3.6rem);
+                    text-transform: capitalize;
+                    border: none;
+                    color: $offWhite;
+                    cursor: pointer;
+                    background-color: transparent;
+                }
                 &-active {
-                    color: $blue;
+                    color: $blue !important;
                 }
             }
 
@@ -95,74 +111,34 @@
             -o-transition: all 0.2s;
             position: relative;
             user-select: none;
-            &-icon {
-                display: none;
-                border: 2px solid $blue;
-                padding: 1rem;
-                border-radius: 50%;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -o-border-radius: 50%;
-                transition: all 0.2s;
-                -webkit-transition: all 0.2s;
-                -moz-transition: all 0.2s;
-                -ms-transition: all 0.2s;
-                -o-transition: all 0.2s;
-                &-active {
-                    background-color: $blue;
-                    color: $offWhite;
-                }
-                &:hover {
-                    cursor: pointer;
-                    background-color: $blue;
-                    color: $offWhite;
-                }
-                @media screen and (min-width: 834px) {
-                    display: flex;
-                }
-            }
             &-input {
                 display: flex;
-                position: absolute;
                 padding: 0.5rem;
                 padding-right: 1rem;
-                font-size: 2rem;
-                color: $blue;
+                font-size: 1.5rem;
+                width: 100%;
+                color: $black;
                 border: 1px solid $blue;
                 border-radius: 0.3rem;
                 -webkit-border-radius: 0.3rem;
                 -moz-border-radius: 0.3rem;
                 -ms-border-radius: 0.3rem;
                 -o-border-radius: 0.3rem;
+                caret-color: $blue;
+                &::placeholder {
+                    color: $blue;
+                }
+                &:focus {
+                    outline: none;
+                    border: 3px solid $blue;
+                }
 
                 @media screen and (min-width: 834px) {
-                    display: none;
-                    top: 120%;
-                    right: -100%;
-                    transform: translateX(25%);
-                    -webkit-transform: translateX(25%);
-                    -moz-transform: translateX(25%);
-                    -ms-transform: translateX(25%);
-                    -o-transform: translateX(25%);
-                    &-active {
-                        display: flex;
-                        transition: all 0.2s;
-                        -webkit-transition: all 0.2s;
-                        -moz-transition: all 0.2s;
-                        -ms-transition: all 0.2s;
-                        -o-transition: all 0.2s;
-                    }
+                    width: 10vw;
+                    max-width: 15rem;
                 }
 
                 @media screen and (min-width: 1805px) {
-                    right: -650%;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    -webkit-transform: translateY(-50%);
-                    -moz-transform: translateY(-50%);
-                    -ms-transform: translateY(-50%);
-                    -o-transform: translateY(-50%);
                 }
             }
         }
@@ -236,6 +212,8 @@
             z-index: 10;
             font-size: 2.5rem;
             user-select: none;
+            background-color: transparent;
+            border: none;
             &-open {
                 color: $blue;
             }
