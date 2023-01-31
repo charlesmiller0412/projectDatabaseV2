@@ -212,6 +212,7 @@
   user-select: none;
   background-color: transparent;
   border: none;
+  color: #12252b;
 }
 .nav__mobile--icons-open {
   color: #7eaecd;

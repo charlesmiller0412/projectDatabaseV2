@@ -5,6 +5,7 @@ import { useMediaQuery } from "usehooks-ts";
 export const NavTypes = (props: any) => {
     const matches = useMediaQuery("(max-width: 833px)");
     const [showSearch, setShowSearch] = useState(false);
+
     const handleClick = (e: any) => {
         props.setCurrentType(e.target.id);
         props.setSearchTerm("");

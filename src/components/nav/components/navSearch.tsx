@@ -1,7 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "usehooks-ts";
-import { useEffect } from "react";
 
 export const NavSearch = (props: any) => {
     const matches = useMediaQuery("(min-width: 834px)");
